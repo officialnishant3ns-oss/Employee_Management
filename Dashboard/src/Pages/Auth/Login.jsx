@@ -12,7 +12,7 @@ const Login = () => {
         setPassword('')
     }
     return (
-        <div className='bg-gray-700 text-white flex h-screen w-screen items-center justify-center'>
+        <div className='bg-gray-800 text-white flex h-screen w-screen items-center justify-center'>
             <div className='border-3 border-black-900 rounded-tr-2xl  h-90 w-105 gap-6'>
                 <form onSubmit={(e) => { handleSubmit(e) }} className='flex flex-col'>
                     <input 

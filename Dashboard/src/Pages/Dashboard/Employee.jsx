@@ -13,7 +13,7 @@ const Employee = () => {
 
 
       <div className="max-w-6xl mx-auto p-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-9">
          
        <TaskList className="bg-red-300" />
        <TaskList className="bg-green-300" />
@@ -22,9 +22,9 @@ const Employee = () => {
         </div>
       </div>
       <hr className="border-gray-600" />
-     <Notification />
-     <Notification />
-     <Notification />
+     <Notification className="bg-red-300" />
+     <Notification className="bg-green-300" />
+     <Notification className="bg-blue-300" />
      
       <hr />
     </div>

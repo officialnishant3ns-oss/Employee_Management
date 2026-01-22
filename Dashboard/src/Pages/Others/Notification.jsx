@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Notification = () => {
+const Notification = ({ className }) => {
   return (
     <div>
-        <div className='bg-red-300 max-w-6xl mx-auto p-6 rounded-2xl mt-5'>
+        <div className={`max-w-6xl mx-auto p-6 rounded-2xl mt-5 ${className}`}>
 
         <div className='flex items-center justify-between' >
           <h1 className='p-2 mb-2 w-15 bg bg-red-400 rounded-2xl'>High</h1>

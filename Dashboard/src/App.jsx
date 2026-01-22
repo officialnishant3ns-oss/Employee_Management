@@ -1,20 +1,21 @@
 import { useState } from 'react'
 
 import './App.css'
-import Login from './Pages/Auth/Login'
-import Employee from './Pages/Dashboard/Employee'
-import TaskList from './Pages/Others/TaskList'
-import Header from './Pages/Others/Header'
-import Admin from './Pages/Dashboard/Admin'
+import Login from './Components/Auth/Login'
+import Employee from './Components/Dashboard/Employee'
+import TaskList from './Components/Others/TaskList'
+import Header from './Components/Others/Header'
+import Admin from './Components/Dashboard/Admin'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-//  <Login />
-  // <Employee />
+    <>
+  {/* <Login /> */}
+ {/* <Employee /> */}
   <Admin />
-
+</>
   )
 }
 

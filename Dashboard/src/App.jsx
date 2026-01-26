@@ -6,19 +6,34 @@ import Employee from './Components/Dashboard/Employee'
 import TaskList from './Components/Others/TaskList'
 import Header from './Components/Others/Header'
 import Admin from './Components/Dashboard/Admin'
+import { GetlocalStorageData } from './LocalStorage/LocalStorage'
 
 function App() {
 
-  useEffect(()=>{
-    SetlocalStorageData()
-  },[])
+  const [userRole, setUserRole] = useState()
+  const handleLogin = (email, password) => {
+    if (email == 'admin@company.com' && password == '123') {
+      setUserRole('admin')
+      console.log("This is admin")
+    }
+    else if (email == 'employee@company.com' && password == '123') {
+      setUserRole('Employees')
+      console.log("This is Employee")
+    }
+    else {
+      alert("Invalid Credential")
+    }
+  }
+
 
   return (
     <>
-  {/* <Login /> */}
- {/* <Employee /> */}
-  <Admin />
-</>
+     {!userRole && <Login handleLogin={handleLogin} />}
+      {userRole === "admin" && <Admin />}
+      {userRole === "Employees" && <Employee />}
+
+
+    </>
   )
 }
 

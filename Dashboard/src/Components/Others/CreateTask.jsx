@@ -4,7 +4,7 @@ const CreateTask = () => {
   return (
     <div>
             <form
-    className='p-5 max-w-6xl ml-50 '
+    className='p-5 max-w-6xl ml-40 mr-30 '
         action="">
         <h1 className='font-2xl mb-1 family-sans '>Task Title</h1>
         <input

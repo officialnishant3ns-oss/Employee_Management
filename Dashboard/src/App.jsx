@@ -7,6 +7,8 @@ import Admin from './Components/Dashboard/Admin'
 import { AuthContext } from './Context/AuthProvider'
 
 function App() {
+const authdata = useContext(AuthContext)
+console.log(authdata.employeeData[0].email)
 
   const [userRole, setUserRole] = useState()
   const handleLogin = (email, password) => {
@@ -14,7 +16,7 @@ function App() {
       setUserRole('admin')
       console.log("This is admin")
     }
-    else if (email == 'employee@company.com' && password == '123') {
+    else if (authdata.employeeData.find(e=>{ e.email=== email && e.password=== password}) {
       setUserRole('Employees')
       console.log("This is Employee")
     }
@@ -23,8 +25,6 @@ function App() {
     }
   }
 
-const data = useContext(AuthContext)
-console.log(data)
   return (
     <>
      {!userRole && <Login handleLogin={handleLogin} />}

@@ -25,22 +25,54 @@
 
 // export default AuthProvider
 
-import React, { createContext,useEffect, useState } from 'react'
+
+//m-2
+// import React, { createContext,useEffect, useState } from 'react'
+// import { SetlocalStorageData, GetlocalStorageData } from '../LocalStorage/LocalStorage'
+
+// export const AuthContext = createContext()
+
+// const AuthProvider = ({ children }) => {
+
+
+//   useEffect(() => {
+//     SetlocalStorageData()
+//   }, [])
+  
+//   const [userData, setUserData] = useState(() => GetlocalStorageData())
+
+//   return (
+//     <AuthContext.Provider value={{ userData, setUserData }}>
+//       {children}
+//     </AuthContext.Provider>
+//   )
+// }
+
+// export default AuthProvider
+
+import React, { createContext, useEffect, useState } from 'react'
 import { SetlocalStorageData, GetlocalStorageData } from '../LocalStorage/LocalStorage'
 
 export const AuthContext = createContext()
 
 const AuthProvider = ({ children }) => {
 
-
   useEffect(() => {
     SetlocalStorageData()
   }, [])
-  
-  const [userData, setUserData] = useState(() => GetlocalStorageData())
+
+  const { employees, admin } = GetlocalStorageData()
+
+  const [employeeData, setEmployeeData] = useState(employees)
+  const [adminData, setAdminData] = useState(admin)
 
   return (
-    <AuthContext.Provider value={{ userData, setUserData }}>
+    <AuthContext.Provider value={{
+      employeeData,
+      setEmployeeData,
+      adminData,
+      setAdminData
+    }}>
       {children}
     </AuthContext.Provider>
   )

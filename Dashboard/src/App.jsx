@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import './App.css'
 import Login from './Components/Auth/Login'
 import Employee from './Components/Dashboard/Employee'
 import Admin from './Components/Dashboard/Admin'
+import { AuthContext } from './Context/AuthProvider'
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
     }
   }
 
-
+const data = useContext(AuthContext)
+console.log(data)
   return (
     <>
      {!userRole && <Login handleLogin={handleLogin} />}

@@ -8,7 +8,7 @@ import { AuthContext } from './Context/AuthProvider'
 
 function App() {
 const authdata = useContext(AuthContext)
-console.log(authdata.employeeData[0].email)
+console.log(authdata.employeeData)
 
   const [userRole, setUserRole] = useState()
   const handleLogin = (email, password) => {
@@ -16,7 +16,7 @@ console.log(authdata.employeeData[0].email)
       setUserRole('admin')
       console.log("This is admin")
     }
-    else if (authdata.employeeData.find(e=>{ e.email=== email && e.password=== password}) {
+    else  if (authdata && authdata.employeeData.find((e)=> email ==e.email && password == e.password)){
       setUserRole('Employees')
       console.log("This is Employee")
     }

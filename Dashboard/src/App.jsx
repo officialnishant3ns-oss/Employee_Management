@@ -7,18 +7,40 @@ import Admin from './Components/Dashboard/Admin'
 import { AuthContext } from './Context/AuthProvider'
 
 function App() {
-const authdata = useContext(AuthContext)
-console.log(authdata.employeeData)
+  const authdata = useContext(AuthContext)
+  // console.log(authdata.employeeData)
 
-  const [userRole, setUserRole] = useState()
+  const [userRole, setUserRole] = useState(null)
+  const [LoggedInUserData, setLoggedInUserData] = useState(null)
+
+  useEffect(() => {
+    if (authdata) {
+      const LoggedInUser = JSON.parse(localStorage.getItem('LoggedInUser'))
+      // if (LoggedInUser) {
+      //   setUserRole(LoggedInUser)
+      // }
+       if (LoggedInUser) {
+      setUserRole(LoggedInUser)
+    }
+    }
+  }, [])
+
+
+
   const handleLogin = (email, password) => {
     if (email == 'admin@company.com' && password == '123') {
-      setUserRole('admin')
-      console.log("This is admin")
+      setUserRole({role:'admin'})
+      localStorage.setItem('LoggedInUser', JSON.stringify({ role: 'admin' }))
     }
-    else  if (authdata && authdata.employeeData.find((e)=> email ==e.email && password == e.password)){
-      setUserRole('Employees')
-      console.log("This is Employee")
+
+    else if (authdata) {
+      const employee = authdata.employeeData.find((e) => email == e.email && password == e.password)
+      if (employee) {
+
+        setUserRole({role:'employees'})
+        localStorage.setItem('LoggedInUser', JSON.stringify({ role: 'employees' }))
+
+      }
     }
     else {
       alert("Invalid Credential")
@@ -26,14 +48,14 @@ console.log(authdata.employeeData)
   }
 
   return (
-    <>
-     {!userRole && <Login handleLogin={handleLogin} />}
-      {userRole === "admin" && <Admin />}
-      {userRole === "Employees" && <Employee />}
 
-
+ <>
+      {!userRole && <Login handleLogin={handleLogin} />}
+      {userRole?.role === "admin" && <Admin />}
+      {userRole?.role === "employees" && <Employee />}
     </>
-  )
+)
+  
 }
 
 export default App

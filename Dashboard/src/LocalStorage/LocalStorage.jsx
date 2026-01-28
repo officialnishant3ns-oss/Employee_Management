@@ -1,8 +1,19 @@
+// localStorage.clear()
 const employees = [
   {
     id: 1,
     email: "employee1@company.com",
+    name: "Nishant Ji",
     password: "123",
+
+    taskCount: {
+      total: 4,
+      completed: 1,
+      active: 1,
+      failed: 1,
+      newTask: 1
+    },
+
     tasks: [
       {
         title: "Build Login Page",
@@ -46,10 +57,21 @@ const employees = [
       }
     ]
   },
+
   {
     id: 2,
     email: "employee2@company.com",
+    name: "Nikki Ji",
     password: "123",
+
+    taskCount: {
+      total: 4,
+      completed: 2,
+      active: 1,
+      failed: 0,
+      newTask: 1
+    },
+
     tasks: [
       {
         title: "Design Dashboard UI",
@@ -93,10 +115,21 @@ const employees = [
       }
     ]
   },
+
   {
     id: 3,
     email: "employee3@company.com",
+    name: "Nikita",
     password: "123",
+
+    taskCount: {
+      total: 4,
+      completed: 2,
+      active: 1,
+      failed: 0,
+      newTask: 1
+    },
+
     tasks: [
       {
         title: "Create REST API",
@@ -140,10 +173,21 @@ const employees = [
       }
     ]
   },
+
   {
     id: 4,
     email: "employee4@company.com",
+    name: "Saksh",
     password: "123",
+
+    taskCount: {
+      total: 4,
+      completed: 1,
+      active: 1,
+      failed: 1,
+      newTask: 1
+    },
+
     tasks: [
       {
         title: "Test Payment Flow",
@@ -187,10 +231,21 @@ const employees = [
       }
     ]
   },
+
   {
     id: 5,
-    email: "employee5@company.com",
+    email: "e@e.e",
+    name: "Sample",
     password: "123",
+
+    taskCount: {
+      total: 4,
+      completed: 2,
+      active: 1,
+      failed: 0,
+      newTask: 1
+    },
+
     tasks: [
       {
         title: "Deploy Application",
@@ -237,6 +292,7 @@ const employees = [
 ]
 
 
+
 const admin = [
   {
     id: 1,
@@ -258,7 +314,7 @@ export const SetlocalStorageData = () => {
 }
 export const GetlocalStorageData = () => {
   return {
-    employees: JSON.parse(localStorage.getItem("employees")) ,
+    employees: JSON.parse(localStorage.getItem("employees")),
     admin: JSON.parse(localStorage.getItem("admin"))
   }
 }

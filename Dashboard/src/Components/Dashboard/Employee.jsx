@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../Others/Header'
 import TaskList from '../Others/TaskList'
 import Notification from '../Others/Notification'
+import AcceptedTask from '../TaskItems/AcceptedTask'
 
 const Employee = ({data}) => {
   return (
@@ -10,19 +11,12 @@ const Employee = ({data}) => {
       <Header data={data} />
 
       <hr className="border-gray-600" />
-
-
       <div className="max-w-6xl mx-auto p-6">
-
-         
        <TaskList data={data} />
-       
-        
       </div>
+
       <hr className="border-gray-600" />
-     <Notification className="bg-red-300" />
-     <Notification className="bg-green-300" />
-     <Notification className="bg-blue-300" />
+     <Notification  />
      
       <hr />
     </div>

@@ -16,7 +16,7 @@ const Employee = ({data}) => {
       </div>
 
       <hr className="border-gray-600" />
-     <Notification  />
+     <Notification data={data}  />
      
       <hr />
     </div>

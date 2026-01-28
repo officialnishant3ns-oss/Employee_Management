@@ -12,7 +12,7 @@ const FailedTask = () => {
         <h1 className='font-bold font-2xl'>Ek Aur Task</h1>
         <p className='mt-1'>Lorem ipsum dolor sit ame adipisicing elit. Assumenda voluptas voluptatibus pariatur amet molestias . Cum, similique ducimus.</p>
       <div className='mt-2 '>
-        {/* <button className='bg-green-400 rounded-xl p-2 text-black font-bold cursor-pointer'>Accept Task</button> */}
+        <button className='bg-green-400 rounded-xl p-2 text-black font-bold cursor-pointer'>Failed </button>
         {/* <button className='ml-4 bg-red-400 rounded-xl p-2 text-black font-bold cursor-pointer' >Mark as Failed</button> */}
       </div>
       </div>

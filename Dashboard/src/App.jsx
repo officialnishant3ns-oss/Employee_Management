@@ -9,7 +9,7 @@ import { AuthContext } from './Context/AuthProvider'
 
 function App() {
   const authdata = useContext(AuthContext)
-  // console.log(authdata.employeeData)
+  // console.log(authdata.employeeData[1].tasks[2])
 
   const [userRole, setUserRole] = useState(null)
   const [LoggedInUserData, setLoggedInUserData] = useState(null)

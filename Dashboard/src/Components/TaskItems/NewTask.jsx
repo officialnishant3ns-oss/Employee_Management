@@ -4,7 +4,7 @@ const NewTask = ({ data }) => {
 
   return (
     <div>
-      {data.tasks.filter(t => t.active).map((t, i) => (
+      {data.tasks.filter(t =>( !t.active && !t.failed  && !t.completed)).map((t, i) => (
         
           <div key={i} className="max-w-6xl mx-auto p-6 rounded-2xl mt-5 bg-red-300">
 

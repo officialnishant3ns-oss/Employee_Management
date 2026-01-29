@@ -9,7 +9,7 @@ const FailedTask = ({data}) => {
         <div key={i} className="max-w-6xl mx-auto p-6 rounded-2xl mt-5 bg-yellow-300">
 
           <div className='flex items-center justify-between' >
-            <h1 className='p-2 mb-2 w-15 bg bg-red-400 rounded-2xl'>{t.category}</h1>
+            <h1 className='p-2 mb-2  bg bg-red-400 rounded-2xl'>{t.category}</h1>
             <h1 className='font-bold' >{t.date}</h1>
           </div>
           <h1 className='font-bold text-2xl'>{t.title}</h1>

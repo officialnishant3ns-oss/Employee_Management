@@ -297,6 +297,7 @@ const admin = [
   {
     id: 1,
     email: "admin@company.com",
+    name:"MRS Nishant Singh",
     password: "123"
   }
 ]

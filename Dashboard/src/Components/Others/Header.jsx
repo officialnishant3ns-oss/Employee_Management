@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Header = ({data}) => {
+  //logout there
   return (
     <div className=''>
          <div className="max-w-6xl mx-auto px-7 py-4">
